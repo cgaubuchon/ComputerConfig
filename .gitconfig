@@ -1,0 +1,23 @@
+[user]
+	name = Corey Aubuchon
+	email = corey@cgaubuchon.com
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[credential]
+	helper = osxkeychain
+[push]
+	default = matching
+[core]
+	excludesfile = /Users/caubuc/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[url "https://"]
+	insteadOf = git://
+[http]
+	sslVerify = false
